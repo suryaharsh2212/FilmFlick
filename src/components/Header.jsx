@@ -2,7 +2,14 @@ import React, { useState } from 'react'
 import Layout from './Layout'
 
 function Header(props) {
-  const [inputvalue,setinputvalue]=useState('hollywood')
+  const [inputvalue,setinputvalue]=useState('love')
+  const changetobollywood=()=>{
+       setinputvalue('Aventure')
+  };
+  const changetohollywood=()=>{
+    setinputvalue('Horror')
+};
+
  
   return (
     <div>
@@ -20,22 +27,25 @@ function Header(props) {
   </div>
   <div className="flex-none">
     <ul className="menu menu-horizontal px-1">
-      <li><a>Link</a></li>
-      <li>
+    <li>
         <details>
           <summary>
            Menu 
           </summary>
           <ul className="p-2 bg-base-100 rounded-t-none">
-            <li><a>Link 1</a></li>
-            <li><a>Link 2</a></li>
+            <li><button onClick={changetohollywood}><a>Horror</a></button></li>
+            <li><button onClick={changetobollywood}><a>Adventure</a></button></li>
+            
           </ul>
         </details>
       </li>
+      <li><a>Link</a></li>
+     
     </ul>
   </div>
 </div>
-<Layout search={inputvalue}/>
+<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'><Layout search={inputvalue}/></div>
+
     </div>
   )
 }
