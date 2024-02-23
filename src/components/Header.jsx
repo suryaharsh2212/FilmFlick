@@ -26,14 +26,14 @@ function Header(props) {
     <a className="btn btn-ghost text-xl"></a>
   </div>
   <div className="flex-none">
-    <ul className="menu menu-horizontal px-1">
+    <ul className="menu menu-horizontal px-1 bg-slate-800 rounded-xl">
     <li>
         <details>
           <summary>
            Menu 
           </summary>
-          <ul className="p-2 bg-base-100 rounded-t-none">
-            <li><button onClick={changetohollywood}><a>Horror</a></button></li>
+          <ul className="p-2 bg-base-100 rounded-t-none ">
+            <li><button  onClick={changetohollywood} ><a>Horror</a></button></li>
             <li><button onClick={changetobollywood}><a>Adventure</a></button></li>
             
           </ul>
