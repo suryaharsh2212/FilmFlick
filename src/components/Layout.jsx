@@ -41,8 +41,9 @@ function Layout({search}) {
       ))}
       </div>
 
-      <Footer />
+     
     </div>
+    
   );
 }
 
