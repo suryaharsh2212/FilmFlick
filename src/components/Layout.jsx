@@ -17,6 +17,7 @@ function Layout({search}) {
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
+        alert("deg")
       }
       return response.json();
     })
@@ -24,9 +25,11 @@ function Layout({search}) {
        
        setstate(data.Search);
       
+      
     })
     .catch(error => {
       console.error('Fetch error:', error);
+      alert("Search Item not Found")
     });
     
   },[search,state])
@@ -43,7 +46,7 @@ function Layout({search}) {
 
      
     </div>
-    
+
   );
 }
 
