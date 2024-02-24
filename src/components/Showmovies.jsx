@@ -4,7 +4,7 @@ import React from 'react'
 function Showmovies({image,link,year}) {
   return (  
   <grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4>
-   <div className="card w-96 bg-base-100 shadow-xl">
+   <div className="card w-80 h-4/5 bg-base-100 shadow-xl">
   <figure><img src={image} alt="Shoes" className='object-cover transition-transform transform hover:scale-105' /></figure>
   <div className="card-body">
     <h2 className="card-title">{link}</h2>
