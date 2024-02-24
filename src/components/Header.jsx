@@ -3,12 +3,12 @@ import Layout from './Layout';
 
 function Header(props) {
   const [inputvalue, setinputvalue] = useState('Hollywood');
-  const [state,setstate]=useState("light")
+  const [state,setstate]=useState("cupcake")
   console.log(state);
   const handlemode=()=>{
     if(state==="dark")
     {
-      setstate("light")
+      setstate("cupcake")
     }
     else{
       setstate("dark")
@@ -34,7 +34,7 @@ function Header(props) {
   return (
     <div>
       <div className='flex flex-col mb-20  h-1/2 '>
-        <div className="navbar bg-slate-850">
+        <div className="navbar bg-slate-850 ">
           <div className="flex-1">
             <a className="btn btn-ghost text-xl">MovieMingle</a>
           </div>
