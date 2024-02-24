@@ -32,9 +32,9 @@ function Header(props) {
           <summary>
            Menu 
           </summary>
-          <ul className="p-2 bg-base-100 rounded-t-none ">
-            <li><button  onClick={changetohollywood} ><a>Horror</a></button></li>
-            <li><button onClick={changetobollywood}><a>Adventure</a></button></li>
+          <ul className="p-2 bg-base-100 rounded-t-none z-50">
+            <li className='z-50'><button  onClick={changetohollywood} ><a>Horror</a></button></li>
+            <li className='z-50'><button onClick={changetobollywood}><a>Adventure</a></button></li>
             
           </ul>
         </details>
@@ -44,7 +44,9 @@ function Header(props) {
     </ul>
   </div>
 </div>
-<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'><Layout search={inputvalue}/></div>
+
+  <Layout search={inputvalue}/>
+ 
 
     </div>
   )

@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import Items from './Items';
+
 import Showmovies from './Showmovies';
 // import { info } from 'autoprefixer'; 
 // import givedata from './api'; 
@@ -34,11 +34,12 @@ function Layout({search}) {
 
   return (
     <div>
+       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4'>
      
-      <Items />
       {state && state.map(element => (
-        <Showmovies image={element.Poster} link={element.Title} year={element.Year} />
+        <Showmovies  image={element.Poster} link={element.Title} year={element.Year} />
       ))}
+      </div>
 
       <Footer />
     </div>
