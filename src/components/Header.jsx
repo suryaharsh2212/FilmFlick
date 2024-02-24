@@ -32,7 +32,7 @@ function Header(props) {
           <summary>
            Menu 
           </summary>
-          <ul className="p-2 bg-base-100 rounded-t-none ">
+          <ul className="p-2 bg-base-100 rounded-t-none z-50 ">
             <li><button  onClick={changetohollywood} ><a>Horror</a></button></li>
             <li><button onClick={changetobollywood}><a>Adventure</a></button></li>
             
