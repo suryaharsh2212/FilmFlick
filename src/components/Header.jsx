@@ -1,58 +1,90 @@
-import React, { useState } from 'react'
-import Layout from './Layout'
+import React, { useState, useEffect } from 'react';
+import Layout from './Layout';
 
 function Header(props) {
-  const [inputvalue,setinputvalue]=useState('all')
-  const changetobollywood=()=>{
-       setinputvalue('Adventure')
-  };
-  const changetohollywood=()=>{
-    setinputvalue('Horror')
-};
-const settohome=()=>{
-  setinputvalue('all')
-};
+  const [inputvalue, setinputvalue] = useState('all');
 
- 
+  const changetobollywood = () => {
+    setinputvalue('Adventure');
+  };
+
+  const changetohollywood = () => {
+    setinputvalue('Horror');
+  };
+
+  const settohome = () => {
+    setinputvalue('all');
+  };
+
   return (
     <div>
-       <div className='flex flex-col bg-violet-950  h-1/2 ' style={{opacity:0.7}}>
-            <h1 className=' font-serif mt-20 text-center text-5xl text-gray-700'>MovieMingle</h1>
-            <h1 className='text-gray-600 text-2xl text-center mt-5'> "Unlock the Magic of Cinema: Your Gateway to Cinematic Adventures!"</h1>
-            <div className='flex justify-center items-center h-full w-full mt-10'>
-                        <input className='p-5 h-10 w-96 rounded-3xl m-3' type="text"  placeholder='Type to search'  onChange={(e)=>setinputvalue(e.target.value)}/>
-                     {/* <button onClick={(e)=>setinputvalue(e.target.value)}>  <img className='h-10 w-10'   src="https://cdn-icons-png.flaticon.com/128/8915/8915520.png" alt="" /></button>  */}
+      <div className='flex flex-col mb-20  h-1/2 '>
+        <div className="navbar bg-slate-850">
+          <div className="flex-1">
+            <a className="btn btn-ghost text-xl">MovieMingle</a>
+          </div>
+          <div className="flex-none gap-2">
+            <div className="form-control">
+              <input type="text" placeholder="Search" className="input input-bordered w-48 md:w-auto" onChange={(e) => setinputvalue(e.target.value)} />
+            </div>
+            <div className="dropdown dropdown-end z-50">
+              <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar z-30">
+                <div className="w-10">
+                  <img alt="Tailwind CSS Navbar component" src="https://cdn-icons-png.flaticon.com/128/12028/12028894.png" />
+                </div>
+              </div>
+              <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                <li>
+                  <a className="justify-between">
+                    Profile
+                  </a>
+                </li>
+                <li><a>Settings</a></li>
+                <li><a>Logout</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
-       </div>
-       <div className="navbar bg-base-100">
-  <div className="flex-1">
-    <a className="btn btn-ghost text-xl"></a>
-  </div>
-  <div className="flex-none z-50">
-    <ul className="menu menu-horizontal px-1 bg-slate-800 rounded-xl z-50">
-    <li>
-        <details>
-          <summary>
-           Menu 
-          </summary>
-          <ul className="p-2 bg-base-100 rounded-t-none z-50">
-            <li className='z-50'><button  onClick={changetohollywood} ><a>Horror</a></button></li>
-            <li className='z-50'><button onClick={changetobollywood}><a>Adventure</a></button></li>
-            
-          </ul>
-        </details>
-      </li>
-      <li><button onClick={settohome}><a>Home</a></button></li>
-     
-    </ul>
+
+        {/* Carousel part starts */}
+
+        <div className="carousel w-full h-5/6 mb-20">
+  <div id="slide1" className="carousel-item relative w-full h-5/6">
+    <img src="https://wallpaperaccess.com/full/1288436.jpg" className="w-full" />
+    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+      <a href="#slide4" className="btn btn-circle">❮</a> 
+      <a href="#slide2" className="btn btn-circle">❯</a>
+    </div>
+  </div> 
+  <div id="slide2" className="carousel-item relative w-full">
+    <img src="https://daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.jpg" className="w-full" />
+    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+      <a href="#slide1" className="btn btn-circle">❮</a> 
+      <a href="#slide3" className="btn btn-circle">❯</a>
+    </div>
+  </div> 
+  <div id="slide3" className="carousel-item relative w-full">
+    <img src="https://daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg" className="w-full" />
+    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+      <a href="#slide2" className="btn btn-circle">❮</a> 
+      <a href="#slide4" className="btn btn-circle">❯</a>
+    </div>
+  </div> 
+  <div id="slide4" className="carousel-item relative w-full">
+    <img src="https://daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.jpg" className="w-full" />
+    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+      <a href="#slide3" className="btn btn-circle">❮</a> 
+      <a href="#slide1" className="btn btn-circle">❯</a>
+    </div>
   </div>
 </div>
 
-  <Layout search={inputvalue}/>
- 
+        {/* Layout component */}
+        <Layout search={inputvalue} />
 
+      </div>
     </div>
-  )
+  );
 }
 
-export default Header
+export default Header;
