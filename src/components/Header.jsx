@@ -25,7 +25,7 @@ function Header(props) {
   <div className="flex-1">
     <a className="btn btn-ghost text-xl"></a>
   </div>
-  <div className="flex-none">
+  <div className="flex-none z-50">
     <ul className="menu menu-horizontal px-1 bg-slate-800 rounded-xl z-50">
     <li>
         <details>
