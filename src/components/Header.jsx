@@ -2,12 +2,15 @@ import React, { useState } from 'react'
 import Layout from './Layout'
 
 function Header(props) {
-  const [inputvalue,setinputvalue]=useState('love')
+  const [inputvalue,setinputvalue]=useState('all')
   const changetobollywood=()=>{
-       setinputvalue('Aventure')
+       setinputvalue('Adventure')
   };
   const changetohollywood=()=>{
     setinputvalue('Horror')
+};
+const settohome=()=>{
+  setinputvalue('all')
 };
 
  
@@ -39,7 +42,7 @@ function Header(props) {
           </ul>
         </details>
       </li>
-      <li><a>Link</a></li>
+      <li><button onClick={settohome}><a>Home</a></button></li>
      
     </ul>
   </div>
