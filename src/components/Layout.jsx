@@ -29,7 +29,7 @@ function Layout({search}) {
     })
     .catch(error => {
       console.error('Fetch error:', error);
-      alert("Search Item not Found")
+      // alert("Search Item not Found") 
     });
     
   },[search,state])
@@ -43,8 +43,8 @@ function Layout({search}) {
         <Showmovies  image={element.Poster} link={element.Title} year={element.Year} />
       ))}
       </div>
+      
 
-     
     </div>
 
   );
