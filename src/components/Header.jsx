@@ -71,7 +71,7 @@ function Header(props) {
 </label>
           <div className="flex-none gap-2">
             <div className="form-control">
-              <input type="text" placeholder="Search" className="input input-bordered w-40 md:w-auto" onChange={(e) => setinputvalue(e.target.value)} />
+              <input type="text" placeholder="Type to Search" className="input input-bordered w-40 md:w-auto" onChange={(e) => setinputvalue(e.target.value)} />
             </div>
           </div>
         </div>
